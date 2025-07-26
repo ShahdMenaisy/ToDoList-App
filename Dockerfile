@@ -11,7 +11,7 @@ FROM base AS dependencies
 ENV NODE_ENV production
 RUN --mount=type=cache,target=/usr/src/app/.npm \
     npm set cache /usr/src/app/.npm && \
-    npm install
+    npm install --only=production
 
 # Stage 3: Production
 FROM base AS production
