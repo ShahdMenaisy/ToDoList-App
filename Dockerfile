@@ -1,7 +1,7 @@
 # Use a build argument for Node.js version
 ARG NODE_VERSION=19.6
 
-# Stage 1: Base Image
+# Stage1: Base Image
 FROM node:${NODE_VERSION}-slim AS base
 WORKDIR /usr/src/app
 COPY package*.json* ./
