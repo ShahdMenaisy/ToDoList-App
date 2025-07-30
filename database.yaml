@@ -1,0 +1,76 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todolistapp
+  namespace: todolist
+  labels:
+    app: todolistapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mongo
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 10
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 120
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongodb-container
+          image: mongo:latest
+          startupProbe:
+            tcpSocket:
+              port: 27017
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+          livenessProbe:
+            tcpSocket:
+              port: 27017
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+          readinessProbe:
+            tcpSocket:
+              port: 27017
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+          ports:
+            - containerPort: 27017
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-svc
+  namespace: todolist
+  labels:
+    app: mongo
+spec:
+  selector:
+    app: mongo
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+  type: ClusterIP
