@@ -1,5 +1,5 @@
 # ToDoList App – DevOps Project
-This repository contains all the necessary files and configurations to automate the deployment of a Node.Js application using DevOps tools **Docker**, **GitHub Actions**, **Vmware Workstation**, **Ansibe**, **Kubernetes** and **GitOps with ArgoCD**.
+This repository contains all the necessary files and configurations to automate the deployment of a Node.Js application using **Docker**, **GitHub Actions**, **Vmware Workstation**, **Ansibe**, **Kubernetes** and **GitOps with ArgoCD**.
 
 
 ## Project Overview
