@@ -77,6 +77,11 @@ kubectl create secret docker-registry <secret-name> \
 ```bash
 kubectl get secret <secret-name> --output=yaml -n <namespcae-name>
 ```
+    - Referenced the secret in the pod spec via:
+```yaml
+imagePullSecrets:
+  - name: myregistrykey
+```
 #### Kubernetes Resources Deployed By ArgoCD
 ![Kubernetes resources deployed by ArgoCD](images/ArgoCD_1.png)
 ![Kubernetes resources deployed by ArgoCD](images/resources.png)
@@ -88,12 +93,6 @@ notice the image here
 #### ArgoCD Pulls The New Image:
 ![ArgoCD Pulls The New Image](images/ArgoCD_4.png)
 
-
-    - Referenced the secret in the pod spec via:
-```yaml
-imagePullSecrets:
-  - name: myregistrykey
-```
 #### Application Screenshots
 Below are some screenshots of the To Do List app running successfully after deployment:
 ![App Working ](images/App_1.png)
