@@ -77,10 +77,26 @@ kubectl create secret docker-registry <secret-name> \
 ```bash
 kubectl get secret <secret-name> --output=yaml -n <namespcae-name>
 ```
+#### Kubernetes Resources Deployed By ArgoCD
+![Kubernetes resources deployed by ArgoCD](images/ArgoCD_1.png)
+![Kubernetes resources deployed by ArgoCD](images/resources.png)
+#### Example On ArgoCD Always Pulling The Image
+notice the image here 
+![Example On ArgoCD Always Pulling The Image](images/ArgoCD_2.png)
+#### Apply a Change 
+![Apply a small change ](images/ArgoCD_3.png)
+#### ArgoCD Pulls The New Image:
+![ArgoCD Pulls The New Image](images/ArgoCD_4.png)
+
 
     - Referenced the secret in the pod spec via:
 ```yaml
 imagePullSecrets:
   - name: myregistrykey
 ```
-
+#### Application Screenshots
+Below are some screenshots of the To Do List app running successfully after deployment:
+![App Working ](images/App_1.png)
+![App Working ](images/App_2.png)
+## Conclusion
+This project demonstrates the full DevOps lifecycle from containerizing a Node.js application to automating its deployment using Kubernetes and GitOps practices with ArgoCD. By leveraging tools like Docker, GitHub Actions, Ansible, and Kubernetes, the solution ensures a scalable, automated, and production-ready deployment pipeline.
