@@ -20,10 +20,10 @@ The project is divided into four parts. Below is a breakdown of each part and ho
 - DockerHub (private repo)
 ### Notes
   - Docker Hub credentials are securely managed using GitHub Actions Secrets
-#### Successful Pipeline Triggering
+#### Successful Pipeline Triggering:
 ![Successful Pipeline Triggering](images/GitHubActions.png)
-#### Successful Image Push
-![Successful Image Push ](images/DockerHub.png)
+#### Successful Image Push:
+![Successful Image Push](images/DockerHub.png)
     
 ## Part 2: Infrastructure Provisioning with Ansible
 
@@ -36,6 +36,10 @@ The project is divided into four parts. Below is a breakdown of each part and ho
 ### Tools Used:
   - VMware Workstation 
   - Ansible
+#### Successful Output of The Ansible Playbook Run:
+![Successful Output of The Ansible Playbook Run](images/ansible.png)
+#### Successful VM Configuration:
+![Successful VM Configuration](images/VM.png)
 
 ## Part 3: Deployment and Image Auto-Update
 
