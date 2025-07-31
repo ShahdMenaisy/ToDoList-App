@@ -3,9 +3,6 @@ kind: Application
 metadata:
   name: argo-application
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: shahdabdulaziz/to-do-list-app
-    argocd-image-updater.argoproj.io/shahdabdulaziz/to-do-list-app.update-strategy: latest
 spec:
   project: default
   source:
