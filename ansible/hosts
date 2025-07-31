@@ -1,0 +1,2 @@
+[machines]
+192.168.157.130 ansible_user=shahd ansible_ssh_private_key=/home/shahd/.ssh/id_ed25519

@@ -1,0 +1,74 @@
+---
+- name: Install pip
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Install pip
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: yes
+
+- name: Add Docker GPG apt Key
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+- name: Add Docker Repository
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+- name: Update apt and install docker-ce
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Update apt and install docker-ce
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+- name: Install Docker Module for Python
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+        extra_args: --break-system-packages
+
+- name: Download Minikube binary
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Download Minikube binary
+      ansible.builtin.get_url:
+        url: "https://github.com/kubernetes/minikube/releases/download/v1.32.0/minikube-linux-amd64"
+        dest: /usr/local/bin/minikube
+        mode: "0755"
+
+- name: Download kubectl binary
+  hosts: machines
+  become: yes
+  become_user: root
+  tasks:
+    - name: Download kubectl binary
+      ansible.builtin.get_url:
+        url: "https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl"
+        dest: /usr/local/bin/kubectl
+        mode: "0755"
