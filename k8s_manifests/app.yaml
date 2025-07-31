@@ -29,7 +29,6 @@ spec:
       containers:
       - name: app-container
         image: shahdabdulaziz/to-do-list-app
-        imagePullPolicy: Always
         ports:
         - containerPort: 4000
         env:
