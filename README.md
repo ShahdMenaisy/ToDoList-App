@@ -71,11 +71,11 @@ kubectl create secret docker-registry <secret-name> \
   --docker-username=<your-user-name> \
   --docker-password=<your-pword> \
   --docker-email=<your-email>\
-  -n todolist
+  -n <namespcae-name>
 ```
     - Inspecting the Secret
 ```bash
-kubectl get secret <secret-name> --output=yaml
+kubectl get secret <secret-name> --output=yaml -n <namespcae-name>
 ```
 
     - Referenced the secret in the pod spec via:
