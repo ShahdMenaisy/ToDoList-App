@@ -3,7 +3,7 @@ This repository contains all the necessary files and configurations to automate 
 
 
 ## Project Overview
-The project is divided into four parts. Below is a breakdown of each part and how I tackled it.
+The project is divided into three parts. Below is a breakdown of each part and how I tackled it.
 
 
 ## Part 1: CI Pipeline with GitHub Actions
