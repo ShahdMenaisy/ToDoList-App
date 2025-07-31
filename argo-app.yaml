@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/vialphal
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-application
@@ -7,11 +7,11 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/ShahdMenaisy/ToDoList-App/tree/main
+    repoURL: https://github.com/ShahdMenaisy/ToDoList-App.git
     targetRevision: main
-    path: .
+    path: k8s_manifests
   destination:
-    server: https://kutternetes.default.svc
+    server: https://kubernetes.default.svc
     namespace: todolist
   
   syncPolicy:
