@@ -1,4 +1,4 @@
-# Use a build argument for Node.js version
+#Use a build argument for Node.js version
 ARG NODE_VERSION=19.6
 
 # Stage1: Base Image
