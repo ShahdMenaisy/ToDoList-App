@@ -88,8 +88,6 @@ imagePullSecrets:
 #### Example On ArgoCD Always Pulling The Image
 notice the image here 
 ![Example On ArgoCD Always Pulling The Image](images/ArgoCD_2.png)
-#### Apply a Change 
-![Apply a small change ](images/ArgoCD_3.png)
 #### ArgoCD Pulls The New Image:
 ![ArgoCD Pulls The New Image](images/ArgoCD_4.png)
 
