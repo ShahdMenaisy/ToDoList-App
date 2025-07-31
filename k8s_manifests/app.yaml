@@ -28,7 +28,7 @@ spec:
       - name: myregistrykey
       containers:
       - name: app-container
-        image: shahdabdulaziz/to-do-list-app
+        image: shahdabdulaziz/to-do-list-app:v1
         ports:
         - containerPort: 4000
         env:
