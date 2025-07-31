@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/vialphal
+kind: Application
+metadata:
+  name: argo-application
+  namespace: argocd
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/ShahdMenaisy/ToDoList-App/tree/main
+    targetRevision: main
+    path: .
+  destination:
+    server: https://kutternetes.default.svc
+    namespace: todolist
+  
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
