@@ -20,7 +20,10 @@ The project is divided into four parts. Below is a breakdown of each part and ho
 - DockerHub (private repo)
 ### Notes
   - Docker Hub credentials are securely managed using GitHub Actions Secrets
-
+#### Successful Pipeline Triggering
+![Successful Pipeline Triggering](images/GitHubActions.png)
+#### Successful Image Push
+![Successful Image Push ](images/DockerHub.png)
     
 ## Part 2: Infrastructure Provisioning with Ansible
 
