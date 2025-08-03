@@ -1,4 +1,4 @@
-#Use a build argument for Node.js version
+# Use a build argument for Node.js version
 ARG NODE_VERSION=19.6
 
 # Stage1: Base Image
@@ -25,5 +25,6 @@ EXPOSE 4000
 
 # Sets the default command to run the production server
 CMD [ "npm", "start" ]
+
 
 
