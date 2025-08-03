@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: shahdabdulaziz/to-do-list-app:v2025x
-    argocd-image-updater.argoproj.io/to-do-list-app.update-strategy: semver
+    argocd-image-updater.argoproj.io/shahdabdulaziz.to-do-list-app.update-strategy: semver
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
 
 spec:
