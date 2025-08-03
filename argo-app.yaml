@@ -3,6 +3,11 @@ kind: Application
 metadata:
   name: argo-application
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: shahdabdulaziz/to-do-list-app:v2025x
+    argocd-image-updater.argoproj.io/<image>.update-strategy: semver
+    argocd-image-updater.argoproj.io/write-back-method: git
+
 spec:
   project: default
   source:
