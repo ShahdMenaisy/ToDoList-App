@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: shahdabdulaziz/to-do-list-app:v2025x
     argocd-image-updater.argoproj.io/<image>.update-strategy: semver
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
 
 spec:
   project: default
