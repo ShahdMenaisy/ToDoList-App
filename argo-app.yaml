@@ -14,6 +14,7 @@ spec:
     repoURL: https://github.com/ShahdMenaisy/ToDoList-App.git
     targetRevision: main
     path: k8s_manifests
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: todolist
